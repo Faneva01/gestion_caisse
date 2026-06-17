@@ -68,11 +68,12 @@ class AppSeeder extends Seeder
         |-------------------------
         | CAISSES
         |-------------------------
-        | IMPORTANT : insert vide interdit => on insère sans batch
         */
-        $this->db->table('caisse')->insert([]);
-        $this->db->table('caisse')->insert([]);
-        $this->db->table('caisse')->insert([]);
+        $this->db->table('caisse')->insertBatch([
+            ['nom' => 'caisse001'],
+            ['nom' => 'caisse002'],
+            ['nom' => 'caisse003'],
+        ]);
 
         /*
         |-------------------------

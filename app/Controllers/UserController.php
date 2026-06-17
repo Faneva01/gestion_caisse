@@ -1,6 +1,6 @@
 <?php
     namespace App\Controllers;
-    use CodeIgniter\Controllers;
+    use CodeIgniter\Controller;
     use App\Models\UserModel;
 
     class UserController extends BaseController{
@@ -9,7 +9,7 @@
         }
 
         public function login(){
-            $nom = $this->resquest->getPost('nom');
+            $nom = $this->request->getPost('nom');
             $mdp = $this->request->getPost('mdp');
 
             $userModel = new UserModel();
@@ -22,6 +22,11 @@
             }
 
             return redirect()->back()->with('error', 'Identifiant ou mot de passe incorrect');
+        }
+
+        public function logout() {
+            session()->destroy();
+            return redirect()->to('/');
         }
     }
 ?>

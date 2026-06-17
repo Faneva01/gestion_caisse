@@ -37,6 +37,30 @@ header{
     border-radius:10px;
 }
 
+.header-title{
+    flex:1;
+}
+
+.btn-deconnexion{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 18px;
+    background:white;
+    color:#006d68;
+    border:1.5px solid #006d68;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:background 0.2s, color 0.2s;
+}
+
+.btn-deconnexion:hover{
+    background:#006d68;
+    color:white;
+}
+
 .container{
     display:flex;
     justify-content:center;
@@ -82,6 +106,7 @@ button{
     border:none;
     border-radius:8px;
     font-size:18px;
+    cursor:pointer;
 }
 
 footer{
@@ -97,10 +122,14 @@ footer{
 <header>
     <div class="logo">C</div>
 
-    <div>
+    <div class="header-title">
         <h3>Caisse</h3>
         <p>Supermarché — Promo 18</p>
     </div>
+
+    <a href="<?= base_url('/logout') ?>" class="btn-deconnexion">
+        Déconnexion
+    </a>
 </header>
 
 <div class="container">
@@ -113,17 +142,18 @@ footer{
             Sélectionnez le poste avec lequel vous travaillez aujourd'hui.
         </p>
 
-        <label>Caisse</label>
-
-        <select>
-            <option>Caisse 1</option>
-            <option>Caisse 2</option>
-            <option>Caisse 3</option>
-        </select>
-
-        <button onclick="window.location='achat.html'">
-            Valider
-        </button>
+        <form action="<?= base_url('/caisse/choisir') ?>" method="POST">
+            <?= csrf_field() ?>
+            <label>Caisse</label>
+            <select name="caisse_id">
+                <?php foreach ($caisses as $caisse): ?>
+                    <option value="<?= $caisse['id'] ?>">
+                        <?= esc($caisse['nom']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit">Valider</button>
+        </form>
 
     </div>
 

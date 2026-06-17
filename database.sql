@@ -15,6 +15,7 @@ produit:
 
 caisse:
     - id
+    - nom
 
 achat:
     - id

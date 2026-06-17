@@ -11,6 +11,10 @@ class CreateCaisse extends Migration {
                 'unsigned' => true,
                 'auto_increment' => true
             ],
+            'nom' => [
+                'type' => 'VARCHAR',
+                'constraint' => 50,
+            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('caisse');

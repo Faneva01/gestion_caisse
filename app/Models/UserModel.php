@@ -7,7 +7,7 @@
         protected $allowedFields = ['nom', 'mdp'];
 
         public function findByNom(string $nom){
-            return this->where('nom', $nom)->first();
+            return $this->where('nom', $nom)->first();
         }
     }
 ?>

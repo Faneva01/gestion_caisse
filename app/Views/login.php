@@ -136,8 +136,8 @@ footer{
         <form action="<?= base_url('/login') ?>" method="POST">
             <?= csrf_field() ?>
 
-            <label>Identifiant</label>
-            <input type="text" name="nom" placeholder="caissier01">
+            <label>Nom</label>
+            <input type="text" name="nom" placeholder="admin">
 
             <label>Mot de passe</label>
             <input type="password" name="mdp">
