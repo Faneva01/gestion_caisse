@@ -8,11 +8,6 @@ class AppSeeder extends Seeder
 {
     public function run()
     {
-        /*
-        |-------------------------
-        | USERS
-        |-------------------------
-        */
         $this->db->table('user')->insertBatch([
             [
                 'nom' => 'admin',
@@ -24,72 +19,33 @@ class AppSeeder extends Seeder
             ]
         ]);
 
-        /*
-        |-------------------------
-        | CLIENTS
-        |-------------------------
-        */
         $this->db->table('client')->insertBatch([
-            [
-                'nom' => 'Rakoto',
-                'contact' => '0341234567'
-            ],
-            [
-                'nom' => 'Rabe',
-                'contact' => '0339876543'
-            ],
-            [
-                'nom' => 'Rasoa',
-                'contact' => '0321112233'
-            ]
+            ['nom' => 'Rakoto', 'contact' => '0341234567'],
+            ['nom' => 'Rabe', 'contact' => '0339876543'],
+            ['nom' => 'Rasoa', 'contact' => '0321112233']
         ]);
 
-        /*
-        |-------------------------
-        | PRODUITS
-        |-------------------------
-        */
         $this->db->table('produit')->insertBatch([
-            [
-                'designation' => 'Stylo',
-                'prix_unitaire' => 1000
-            ],
-            [
-                'designation' => 'Cahier',
-                'prix_unitaire' => 2500
-            ],
-            [
-                'designation' => 'Crayon',
-                'prix_unitaire' => 500
-            ]
+            ['designation' => 'Stylo', 'prix_unitaire' => 1000],
+            ['designation' => 'Cahier', 'prix_unitaire' => 2500],
+            ['designation' => 'Crayon', 'prix_unitaire' => 500]
         ]);
 
         /*
-        |-------------------------
-        | CAISSES
-        |-------------------------
-        | IMPORTANT : insert vide interdit => on insère sans batch
-        */
-        $this->db->table('caisse')->insert([]);
-        $this->db->table('caisse')->insert([]);
-        $this->db->table('caisse')->insert([]);
+         */
 
-        /*
-        |-------------------------
-        | ACHATS
-        |-------------------------
-        */
+        for ($i = 0; $i < 3; $i++) {
+            $this->db->table('caisse')->insert([
+                'id' => null
+            ]);
+        }
+
         $this->db->table('achat')->insertBatch([
             ['id_client' => 1],
             ['id_client' => 2],
             ['id_client' => 3]
         ]);
 
-        /*
-        |-------------------------
-        | ACHAT PRODUIT
-        |-------------------------
-        */
         $this->db->table('achat_produit')->insertBatch([
             [
                 'id_achat' => 1,

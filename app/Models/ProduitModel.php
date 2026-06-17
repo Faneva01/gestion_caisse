@@ -5,6 +5,6 @@ use CodeIgniter\Model;
 
 class ProduitModel extends Model
 {
-    protected $table = 'produits';
-    protected $allowedFields = ['nom', 'prix'];
+    protected $table = 'produit';
+    protected $allowedFields = ['id', 'designation', 'prix_unitaire'];
 }

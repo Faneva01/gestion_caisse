@@ -8,6 +8,7 @@ client:
     - id
     - nom
     - contact
+
 produit:
     - id
     - designation
