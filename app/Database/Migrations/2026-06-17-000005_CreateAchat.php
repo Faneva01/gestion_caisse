@@ -5,12 +5,12 @@ use CodeIgniter\Database\Migration;
 
 class CreateAchat extends Migration {
     public function up() {
-        $this->forge->addFields([
+        $this->forge->addField([
             'id' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
-                'auto_increment' => true
+                'auto_increment' => true,
             ],
             'id_client' => [
                 'type' => 'INT',

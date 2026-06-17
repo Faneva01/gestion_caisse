@@ -31,7 +31,7 @@ class CreateAchatProduit extends Migration {
                 'type' => 'INT',
                 'constraint' => 4,
             ],
-            'date_[achat' => [
+            'date_achat' => [
                 'type' => 'DATE'
             ],
         ]);

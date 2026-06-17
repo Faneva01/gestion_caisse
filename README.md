@@ -9,4 +9,3 @@
 
 > **Note importante** : L'extension SQLite3 est disponible dans le PHP de XAMPP mais peut manquer dans le PHP par défaut de votre système. Utilisez toujours le chemin complet `/opt/lampp/bin/php`.
 
-## Comptes de test
