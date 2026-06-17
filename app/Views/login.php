@@ -128,20 +128,22 @@ footer{
 
         <h1>Connexion</h1>
         <p>Accédez à votre poste de caisse</p>
+        <?php if (session()->getFlashdata('error')): ?>
+            <p style="color:red; text-align:center;">
+                <?= session()->getFlashdata('error') ?>
+            </p>
+        <?php endif; ?>
+        <form action="<?= base_url('/login') ?>" method="POST">
+            <?= csrf_field() ?>
 
-        <label>Identifiant</label>
-        <input type="text" value="caissier01">
+            <label>Identifiant</label>
+            <input type="text" name="nom" placeholder="caissier01">
 
-        <label>Mot de passe</label>
-        <input type="password" value="12345678">
+            <label>Mot de passe</label>
+            <input type="password" name="mdp">
 
-        <button onclick="window.location='choix-caisse.html'">
-            Se connecter
-        </button>
-
-        <a href="choix-caisse.html" class="skip">
-            Passer la connexion →
-        </a>
+            <button type="submit">Se connecter</button>
+        </form>
 
     </div>
 </div>
