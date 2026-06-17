@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saisie des achats</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f3eb;
+}
+
+header{
+    background:white;
+    border-bottom:1px solid #ddd;
+    padding:15px 150px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.logo{
+    width:40px;
+    height:40px;
+    background:#006d68;
+    color:white;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:78%;
+    margin:40px auto;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#556;
+    margin-bottom:30px;
+}
+
+.form{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid #ddd;
+    display:flex;
+    gap:15px;
+    align-items:end;
+}
+
+.group{
+    flex:1;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+select,input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.btn{
+    background:#006d68;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.table{
+    margin-top:25px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    border:1px solid #ddd;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#f2eee3;
+}
+
+th{
+    padding:18px;
+    text-align:left;
+}
+
+td{
+    padding:50px;
+    text-align:center;
+    color:#556;
+}
+
+tfoot{
+    background:#f2eee3;
+}
+
+.total{
+    font-size:30px;
+    font-weight:bold;
+    text-align:right;
+}
+
+.cloture{
+    margin-top:25px;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.cloture button{
+    padding:14px 25px;
+    border:none;
+    border-radius:8px;
+    background:#e5c88d;
+    color:white;
+    font-size:18px;
+}
+
+footer{
+    text-align:center;
+    margin-top:60px;
+    color:#556;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">C</div>
+
+    <div>
+        <h3>Caisse</h3>
+        <p>Supermarché — Promo 18</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <h1>Saisie des achats</h1>
+
+    <p class="subtitle">
+        Ajoutez les produits passés en caisse pour le client en cours.
+    </p>
+
+    <div class="form">
+
+        <div class="group">
+            <label>Produit</label>
+
+            <select>
+                <option>Biscuit — 1000 F</option>
+                <option>Riz — 2500 F</option>
+                <option>Lait — 3500 F</option>
+            </select>
+        </div>
+
+        <div style="width:250px;">
+            <label>Quantité</label>
+            <input type="number" value="1">
+        </div>
+
+        <button class="btn">
+            Valider
+        </button>
+
+    </div>
+
+    <div class="table">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>PRODUIT</th>
+                    <th>PRIX UNIT</th>
+                    <th>QTÉ</th>
+                    <th>MONTANT</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td colspan="4">
+                        Aucun achat saisi pour ce client.
+                    </td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th colspan="3" style="text-align:right;">
+                        Total
+                    </th>
+
+                    <th class="total">
+                        0 F
+                    </th>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </div>
+
+    <div class="cloture">
+        <button>Clôturer l'achat</button>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 ITUNIVERSITY — TD SI-IHM
+</footer>
+
+</body>
+</html>
