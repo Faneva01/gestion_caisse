@@ -5,3 +5,5 @@
     require_once __DIR__ . '/Routes/LoginRoute.php';
 
     require_once __DIR__ . '/Routes/CaisseRoute.php';
+
+    require_once __DIR__ . '/Routes/AchatRoute.php';

@@ -1,10 +1,14 @@
 <?php
+
 namespace App\Models;
 
 use CodeIgniter\Model;
 
 class ProduitModel extends Model
 {
-    protected $table = 'produits';
-    protected $allowedFields = ['nom', 'prix'];
+    protected $table         = 'produit';
+    protected $primaryKey    = 'id';
+    protected $returnType    = 'array';
+    protected $allowedFields = ['designation', 'prix_unitaire'];
+    protected $useTimestamps = false;
 }
