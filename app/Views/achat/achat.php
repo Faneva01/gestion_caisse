@@ -26,33 +26,29 @@
         Ajoutez les produits passés en caisse pour le client en cours.
     </p>
 
-    <!-- FORMULAIRE -->
-    <form method="POST" action="<?= base_url('/achat/ajouter') ?>" class="form">
+    <div class="form">
 
         <div class="group">
             <label>Produit</label>
 
-            <select name="id_produit" required>
-                <?php foreach ($produits as $p): ?>
-                    <option value="<?= $p->id ?>">
-                        <?= $p->designation ?> — <?= $p->prix_unitaire ?> F
-                    </option>
-                <?php endforeach; ?>
+            <select>
+                <option>Biscuit — 1000 F</option>
+                <option>Riz — 2500 F</option>
+                <option>Lait — 3500 F</option>
             </select>
         </div>
 
         <div style="width:250px;">
             <label>Quantité</label>
-            <input type="number" name="quantite" value="1" min="1">
+            <input type="number" value="1">
         </div>
 
-        <button class="btn" type="submit">
+        <button class="btn">
             Valider
         </button>
 
-    </form>
+    </div>
 
-    <!-- TABLE -->
     <div class="table">
 
         <table>
@@ -63,30 +59,15 @@
                     <th>PRIX UNIT</th>
                     <th>QTÉ</th>
                     <th>MONTANT</th>
-                    <th>ACTION</th>
                 </tr>
             </thead>
 
             <tbody>
-
-                <?php if (empty($panier)): ?>
-                    <tr>
-                        <td colspan="5">Aucun achat saisi pour ce client.</td>
-                    </tr>
-                <?php else: ?>
-                    <?php foreach ($panier as $i => $item): ?>
-                        <tr>
-                            <td><?= $item['designation'] ?></td>
-                            <td><?= $item['prix'] ?></td>
-                            <td><?= $item['quantite'] ?></td>
-                            <td><?= $item['montant'] ?></td>
-                            <td>
-                                <a href="<?= base_url('/achat/supprimer/'.$i) ?>">X</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-
+                <tr>
+                    <td colspan="4">
+                        Aucun achat saisi pour ce client.
+                    </td>
+                </tr>
             </tbody>
 
             <tfoot>
@@ -96,7 +77,7 @@
                     </th>
 
                     <th class="total">
-                        <?= $total ?> F
+                        0 F
                     </th>
                 </tr>
             </tfoot>
@@ -106,9 +87,7 @@
     </div>
 
     <div class="cloture">
-        <a href="<?= base_url('/achat/cloturer') ?>">
-            <button>Clôturer l'achat</button>
-        </a>
+        <button>Clôturer l'achat</button>
     </div>
 
 </div>
