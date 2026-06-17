@@ -1,4 +1,13 @@
 -- Table 
+user:
+    - id
+    - nom
+    - mdp
+    
+client:
+    - id
+    - nom
+    - contact
 produit:
     - id
     - designation
@@ -9,7 +18,7 @@ caisse:
 
 achat:
     - id
-    - nom_client
+    - id_client
 
 achat_produit:
     - id
